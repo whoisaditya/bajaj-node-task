@@ -51,7 +51,7 @@ exports.AddData = async (req, res) => {
         let prev = highest_alphabet.pop();
         // console.log(prev)
         let curr = alphabet;
-        if(curr.toLowerCase().localeCompare(prev.toLowerCase())) {
+        if(curr.toLowerCase() > prev.toLowerCase()) {
             highest_alphabet.push(curr)
         } else {
             highest_alphabet.push(prev)
