@@ -31,13 +31,13 @@ exports.AddData = async (req, res) => {
   data.forEach((item) => {
     const ele = parseInt(item);
     if (!isNaN(ele)) {
-      response.numbers.push(item.toString());
+      numbers.push(item.toString());
     } else if (
       typeof item === "string" &&
       item.length === 1 &&
       /^[a-zA-Z]+$/.test(item)
     ) {
-      response.alphabets.push(item);
+      alphabets.push(item);
     }
   });
 
