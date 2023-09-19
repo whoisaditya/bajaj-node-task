@@ -35,10 +35,14 @@ exports.AddData = async (req, res) => {
         maxAlphabet.toLowerCase().charCodeAt(0),
         element.toLowerCase().charCodeAt(0)
       );
-      maxAlphabet = String.fromCharCode(maxChar);
+      maxAlphabet = String.fromCharCode(maxAlphabet);
       alphabets.push(element);
     }
   });
+
+  if(alphabets.length == 0) {
+    response.highest_alphabet = []
+  }
 
   return res.status(200).json(response);
 };
